@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Quiz Application</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+	<div class="quiz-container">
+		<audio id="myAudio">
+			<source src="sound-3.mp3" type="audio/mpeg">
+		</audio>
+		
+		<h2 class="question"></h2>
+		<div class="options">
+			<input type="radio" name="answer" id="option1" value="option1">
+			<label for="option1"><span></span></label>
+			<input type="radio" name="answer" id="option2" value="option2">
+			<label for="option2"><span></span></label>
+			<input type="radio" name="answer" id="option3" value="option3">
+			<label for="option3"><span></span></label>
+			<input type="radio" name="answer" id="option4" value="option4">
+			<label for="option4"><span></span></label>
+		</div>
+		<div class="buttons">
+			<button id="start-btn">Start Quiz</button>
+			<button id="prev-btn" disabled>Prev</button>
+			<button id="next-btn">Next</button>
+			<button id="submit-btn" disabled>Submit</button>
+		</div>
+
+		<div id="timer"></div>
+	</div>
+
+	<audio id="click-sound">
+		<source src="click-sound.mp3" type="audio/mpeg">
+	</audio>
+
+	<script src="script.js"></script>
+	<script>
+		// Add event listener to each radio button
+		$('input[type="radio"]').on('click', function() {
+			// Play the click sound
+			$('#click-sound')[0].play();
+		});
+	</script>
+</body>
+
+</html>
